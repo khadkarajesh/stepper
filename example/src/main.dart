@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stepper/stepper.dart';
+
+import 'bottom_stepper.dart';
+import 'stepper_validation.dart';
+import 'top_stepper.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,53 +43,39 @@ class _MyHomePageState extends State<MyHomePage> {
           left: 16,
           right: 16,
         ),
-        child: HorizontalStepper(
-            steps: [
-              HorizontalStep(
-                title: "Step 1",
-                widget: Center(
-                  child: Text("Step 1"),
-                ),
-                state: HorizontalStepState.SELECTED,
-                isValid: true,
-              ),
-              HorizontalStep(
-                title: "Step 2",
-                widget: Center(
-                  child: Text("Step 2"),
-                ),
-                isValid: true,
-              ),
-              HorizontalStep(
-                title: "Step 3",
-                widget: Center(
-                  child: Text("Step 3"),
-                ),
-                isValid: true,
-              ),
-              HorizontalStep(
-                title: "Step 4",
-                widget: Center(
-                  child: Text("Step 4"),
-                ),
-                isValid: true,
-              )
-            ],
-            selectedColor: const Color(0xFF4FE2C0),
-            unSelectedColor: Colors.grey.shade400,
-            leftBtnColor: const Color(0xffEA7F8B),
-            rightBtnColor: const Color(0xFF4FE2C0),
-            selectedOuterCircleColor: const Color(0xFF40A8F4),
-            type: Type.TOP,
-            circleRadius: 30,
-            onComplete: () {
-              print("completed");
-            },
-            textStyle: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              decoration: null,
-            )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TopStepper()),
+                );
+              },
+              child: Text("Stepper in top"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BottomStepper()),
+                );
+              },
+              child: Text("Stepper in bottom"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => StepperValidation()),
+                );
+              },
+              child: Text("Stepper with validation State"),
+            )
+          ],
+        ),
       ),
     );
   }
