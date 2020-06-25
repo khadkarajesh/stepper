@@ -1,5 +1,8 @@
 # Horizontal Stepper
-Horizontal Stepper
+Horizontal Stepper for top and bottom position
+
+## Demo
+<img src="https://github.com/khadkarajesh/stepper/blob/master/media/top_stepper.jpg" height="500px" width="300px" />     <img src="https://github.com/khadkarajesh/stepper/blob/master/media/bottom_stepper.jpg" height="500px" width="300px" />
 
 ## Usage
 
